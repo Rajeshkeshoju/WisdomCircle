@@ -1,0 +1,278 @@
+.side-banner {
+    /* Rectangle 1 */
+    position: absolute;
+    width: 526px;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+
+    /* Neutral/Grey */
+    background: #404555;
+}
+
+.welcome-back {
+    /* Welcome back! */
+
+    position: absolute;
+    /* width: 324px;
+    height: 32px; */
+    left: 30%;
+    top: 60%;
+
+    /* Heading / Bold / 24 */
+
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    /* identical to box height, or 133% */
+
+
+    /* Neutral / White */
+
+    color: #FFFFFF;
+
+}
+
+.welcome-text {
+    /* Sign In to find opportunities that match your interests. We have both part-time and full-time roles that can be done online and in-person. */
+
+    position: absolute;
+    /* width: 337px;
+    height: 96px;
+    left: 165px;
+    top: 569px; */
+
+    left:30%;
+    top: 65%;
+
+    /* Body / Regular / 16 */
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* or 150% */
+
+
+    /* Neutral / White */
+
+    color: #FFFFFF;
+}
+
+.contact-text {
+    /* Please contact us at +91-9380644532 if you need any assistance. */
+    position: absolute;
+    /* width: 337px;
+    height: 36px;
+    left: 165px;
+    top: 780px; */
+
+    left: 30%;
+    top: 93%;
+
+    /* Body/Regular/12 */
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    /* or 150% */
+
+
+    /* Neutral / White */
+
+    color: #FFFFFF;
+}
+
+
+.pose_02 {
+    /* POSE_02 */
+
+    position: absolute;
+    width: 165px;
+    height: 219px;
+    /* right: 1115px; */
+    /* bottom: 0px;
+    top: 625px; */
+    top:72%;
+
+    background: url(../images/POSE_02.svg);
+}
+
+.group-logo {
+    /* Group 1244 */
+
+    position: absolute;
+    width: 217px;
+    height: 153px;
+    /* left: 155px;
+    top: 216px; */
+
+    left: 30%;
+    top: 30%;
+}
+
+.signin-text {
+    /* Sign In to WisdomCircle */
+
+    /* position: absolute; */
+    width: 345px;
+    height: 32px;
+    /* left: 711px;
+    top: 273px; */
+
+    /* Heading / Bold / 24 */
+
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    /* identical to box height, or 133% */
+
+
+    /* Neutral / Black */
+
+    color: #121317;
+}
+
+.create-acc-suggestion-text {
+    /* Don’t have an account? Sign Up */
+
+    /* position: absolute; */
+    width: 256px;
+    height: 24px;
+    /* left: 711px;
+    top: 309px; */
+
+    /* Body / Regular / 16 */
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+
+    /* Neutral/Grey */
+
+    color: #404555;
+}
+
+input {
+    /* Assets/Input */
+
+
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 12px 16px;
+    gap: 8px;
+
+    width: 384px;
+    height: 48px;
+
+    /* Neutral / White */
+
+    background: #FFFFFF;
+    /* Neutral / Divider */
+
+    border: 1px solid #DCDEE5;
+    border-radius: 4px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.group-signin-form {
+    /* Group 33311 */
+    position: absolute;
+    /* width: 384px;
+    height: 294px;
+    left: 711px;
+    top: 273px; */
+
+    left: 53%;
+    top: 25%;
+}
+
+.button {
+    /* Components/Buttons */
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 11px 32px;
+    gap: 8px;
+
+    /* position: absolute; */
+    width: 384px;
+    height: 48px;
+    /* left: 711px;
+    top: 519px; */
+
+    /* Primary/4 */
+
+    background: #F1C12B;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.button:hover {
+        /* Components/Buttons */
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 11px 32px;
+    gap: 8px;
+
+    /* position: absolute; */
+    width: 384px;
+    height: 48px;
+    /* left: 711px;
+    top: 519px; */
+
+    /* Primary/4 */
+
+    background: #dbaa17;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+
+    transition-duration: .4s;
+}
+
+.link {
+    /* Help */
+    width: 384px;
+    height: 22px;
+
+    /* Link / 14 */
+    font-style: normal;
+    font-weight: 600;
+    font-size: 8px;
+    line-height: 22px;
+    /* identical to box height, or 157% */
+
+
+    /* Accent / Royal Blue / 4 */
+
+    color: #2558E5;
+
+}
