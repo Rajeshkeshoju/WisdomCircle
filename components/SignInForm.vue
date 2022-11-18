@@ -9,7 +9,7 @@
             Sign In to WisdomCircle
         </h1>
         <h2 class="create-acc-suggestion-text mb-4 ml-4">
-            Don’t have an account? <NuxtLink to="/" :style="{color:'#2558E5'}" class="hover:text-indigo-500 font-medium">Sign Up</NuxtLink>
+            Don’t have an account? <NuxtLink to="/" class="text-indigo-600 hover:text-indigo-500 font-medium">Sign Up</NuxtLink>
         </h2>
 
         <Form  @submit = "onSubmit">
