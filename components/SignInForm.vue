@@ -96,6 +96,8 @@
                 const email = values.email;
                 const password = values.password;
 
+                console.log(email);
+
                 // Make API calls for Authentication
             },
 
