@@ -4,6 +4,10 @@
 </style>
 
 <template>
+
+    <div v-html="alertBox">
+    </div>
+
     <div class="flex flex-col p-2 group-signin-form">
         <h1 class="signin-text ml-4">
             Sign In to WisdomCircle
@@ -12,7 +16,7 @@
             Don’t have an account? <NuxtLink to="/" class="text-indigo-600 hover:text-indigo-500 font-medium">Sign Up</NuxtLink>
         </h2>
 
-        <Form  @submit = "onSubmit">
+        <Form @submit = "onSubmit">
             <Field name="email" type="email" :rules="validateEmail"  placeholder="Email or Mobile Number" class="ml-4 mt-4 mr-4" required/>
             <ErrorMessage name="email" class="ml-4  text-red-600 text-sm" />
 
@@ -31,7 +35,7 @@
                 <NuxtLink to="/" class="float-right text-sm text-indigo-600 hover:text-indigo-500">Forgot password?</NuxtLink>
             </div>
 
-            <button disabled value="Sign in" class="button m-4 mt-8">Sign in</button>
+            <input type="submit" class="button m-4 mt-8"/>
         </Form>
     </div>
 </template>
@@ -40,6 +44,12 @@
 
 <script>
     import { Form, Field, ErrorMessage } from 'vee-validate';
+    import axios from 'axios';
+
+    import GreenAlertBox from '../components/GreenAlertBox.vue';
+    import RedAlertBox from '../components/RedAlertBox.vue';
+
+    const baseUrl = 'http://localhost:4000';
 
     export default {
 
@@ -52,7 +62,8 @@
         data() {
             return {
                 icon: "eye-closed",
-                fieldType: 'password'
+                fieldType: 'password',
+                alertBox: null,
             };
         },
 
@@ -96,9 +107,47 @@
                 const email = values.email;
                 const password = values.password;
 
-                console.log(email);
-
                 // Make API calls for Authentication
+
+                const loginEndPoint = baseUrl + '/login';
+
+                axios.post(loginEndPoint, {
+                    email: email,
+                    password: password
+                })
+                .then(
+                    (response) => {
+                        const authMessage = response.data.message;
+                        const isLoggedIn = response.data.isLoggedIn;
+
+                        let color = '';
+
+                        if(isLoggedIn) {
+                            color = 'green';
+                        } else {
+                            color ='red';
+                        }
+
+                        this.alertBox = `<div class="bg-${color}-100 border border-${color}-400 text-${color}-700 px-4 py-3 rounded relative" role="alert">
+                                            <strong class="font-bold">${authMessage}</strong>
+                                            <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                                                <svg class="fill-current h-6 w-6 text-${color}-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
+                                            </span>
+                                        </div>`;
+
+                        setTimeout(() => {this.alertBox = null}, 2000);
+                    },
+
+                    (error) => {
+                        alert(error);
+                    }
+                )
+                
+                .catch(
+                    error => {
+                        alert(error);
+                    }
+                );
             },
 
             validateEmail(value) {
