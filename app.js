@@ -28,8 +28,8 @@ app.get("/", (req, res) => {
 
 app.post("/login", login);
 
-app.listen(process.env.PORT || 4000, () => {
-        log("Listening at https://localhost:" + PORT);
+app.listen(PORT, () => {
+        log("App is listening");
     }
 );
 
