@@ -46,7 +46,7 @@
     import { Form, Field, ErrorMessage } from 'vee-validate';
     import axios from 'axios';
 
-    const baseUrl = 'http://localhost:4000';
+    const baseUrl = 'https://wisgen-api.onrender.com';
 
     export default {
 
