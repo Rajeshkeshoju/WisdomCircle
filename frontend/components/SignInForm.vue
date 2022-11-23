@@ -1,7 +1,4 @@
 <style scoped src="../assets/css/style.css"></style>
-<style scoped>
-    @import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
-</style>
 
 <template>
 
@@ -26,7 +23,6 @@
                     <div>
                         <img v-if="icon" src="../assets/images/eye.svg" alt="eye" />
                         <img v-else src="../assets/images/eye-closed.svg" alt="eye" />
-
                     </div>
                 </button>                    
             </div>
@@ -120,18 +116,15 @@
                         const authMessage = response.data.message;
                         const isLoggedIn = response.data.isLoggedIn;
 
-                        let color;
-
                         if(isLoggedIn) {
-                            color = 'green';
+                            this.alertBox = `<div class="bg-teal-100 border border-teal-400 text-teal-700 px-4 py-3 rounded relative" role="alert">
+                                                <strong class="font-bold">${authMessage}</strong>
+                                            </div>`;
                         } else {
-                            color = 'red';
+                            this.alertBox = `<div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                                                <strong class="font-bold">${authMessage}</strong>
+                                            </div>`;
                         }
-
-                        
-                        this.alertBox = `<div class="bg-${color}-100 border border-${color}-400 text-${color}-700 px-4 py-3 rounded relative justify-center" role="alert">
-                                            <strong class="font-bold">${authMessage}</strong>
-                                        </div>`;
 
                         setTimeout(() => {this.alertBox = null}, 2000);
                     },
