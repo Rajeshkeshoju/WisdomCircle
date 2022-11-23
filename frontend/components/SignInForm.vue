@@ -24,7 +24,9 @@
                 <Field name="password" :type="fieldType" :rules="validatePassword" placeholder="Password" class="peer ..."/>
                 <button @click="toggleShow" class="w-fit ml-auto p-m absolute inset-0 flex justify-end items-center m-4">
                     <div>
-                        <img :src="`_nuxt/assets/images/${icon}.svg`" alt="eye" />
+                        <img v-if="icon" src="../assets/images/eye.svg" alt="eye" />
+                        <img v-else src="../assets/images/eye-closed.svg" alt="eye" />
+
                     </div>
                 </button>                    
             </div>
@@ -57,7 +59,7 @@
 
         data() {
             return {
-                icon: "eye-closed",
+                icon: false,
                 fieldType: 'password',
                 alertBox: null,
             };
@@ -86,9 +88,11 @@
         methods: {
             toggleShow() {
 
-                if (this.icon === "eye-closed") {
-                    this.icon = "eye";
-                } else this.icon = "eye-closed";
+                // if (this.icon === "eye-closed") {
+                //     this.icon = "eye";
+                // } else this.icon = "eye-closed";
+
+                this.icon = !this.icon;
 
 
                 //For Simplification => this.fieldType = this.fieldType == "text" ? "password" : "text"
