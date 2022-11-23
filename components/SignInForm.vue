@@ -80,7 +80,7 @@
 
         computed: {
             changeEyeIcon () {
-                return (this.icon == "eye-closed") ? "_nuxt/assets/images/eye-closed.svg" : "_nuxt/assets/images/eye.svg";
+                return (this.icon == "eye-closed") ? "../assets/images/eye-closed.svg" : "../assets/images/eye.svg";
             }
         } ,
 
