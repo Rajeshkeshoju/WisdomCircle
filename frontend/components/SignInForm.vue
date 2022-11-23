@@ -18,13 +18,13 @@
 
         <Form @submit = "onSubmit">
             <Field name="email" type="email" :rules="validateEmail"  placeholder="Email or Mobile Number" class="ml-4 mt-4 mr-4" required/>
-            <ErrorMessage name="email" class="ml-4  text-red-600 text-sm" />
+            <ErrorMessage name="email" class="ml-4 text-red-600 text-sm" />
 
             <div class="mt-4 ml-4 mr-4 grid flex relative z-0 items-center">
                 <Field name="password" :type="fieldType" :rules="validatePassword" placeholder="Password" class="peer ..."/>
                 <button @click="toggleShow" class="w-fit ml-auto p-m absolute inset-0 flex justify-end items-center m-4">
                     <div>
-                        <img :src="changeEyeIcon"  alt="eye" />
+                        <img :src="`_nuxt/assets/images/${icon}.svg`" alt="eye" />
                     </div>
                 </button>                    
             </div>
@@ -77,11 +77,11 @@
             }
         },
 
-        computed: {
-            changeEyeIcon () {
-                return (this.icon == "eye-closed") ? "../assets/images/eye-closed.svg" : "../assets/images/eye.svg";
-            }
-        } ,
+        // computed: {
+        //     changeEyeIcon () {
+        //         return (this.icon == "eye-closed") ? "../assets/images/eye-closed.svg" : "../assets/images/eye.svg";
+        //     }
+        // } ,
 
         methods: {
             toggleShow() {
