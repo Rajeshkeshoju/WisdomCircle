@@ -21,7 +21,7 @@
                 <Field name="password" :type="fieldType" :rules="validatePassword" placeholder="Password" class="peer ..."/>
                 <button @click="toggleShow" class="w-fit ml-auto p-m absolute inset-0 flex justify-end items-center m-4">
                     <div>
-                        <img v-if="icon" src="../assets/images/eye.svg" alt="eye" />
+                        <img v-if="isEyeOpen" src="../assets/images/eye.svg" alt="eye" />
                         <img v-else src="../assets/images/eye-closed.svg" alt="eye" />
                     </div>
                 </button>                    
@@ -55,9 +55,9 @@
 
         data() {
             return {
-                icon: false,
+                isEyeOpen: false,
                 fieldType: 'password',
-                alertBox: null,
+                alertBox: '<div></div>',
             };
         },
 
@@ -75,20 +75,23 @@
             }
         },
 
-        // computed: {
-        //     changeEyeIcon () {
-        //         return (this.icon == "eye-closed") ? "../assets/images/eye-closed.svg" : "../assets/images/eye.svg";
-        //     }
-        // } ,
+        /* computed: {
+            changeEyeIcon () {
+                return (this.icon == "eye-closed") ? "../assets/images/eye-closed.svg" : "../assets/images/eye.svg";
+            }
+        } , 
+        */
 
         methods: {
             toggleShow() {
 
-                // if (this.icon === "eye-closed") {
-                //     this.icon = "eye";
-                // } else this.icon = "eye-closed";
+                /* if (this.icon === "eye-closed") {
+                    this.icon = "eye";
+                } else this.icon = "eye-closed";
 
-                this.icon = !this.icon;
+                */
+
+                this.isEyeOpen = !this.isEyeOpen;
 
 
                 //For Simplification => this.fieldType = this.fieldType == "text" ? "password" : "text"
